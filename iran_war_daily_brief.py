@@ -199,7 +199,7 @@ def send_email(html_content):
     msg["To"] = RECEIVER_EMAIL
     msg.attach(MIMEText(html_content, "html"))
 
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+    with smtplib.SMTP_SSL("smtps.hiworks.com", 465) as server:
         server.login(SENDER_EMAIL, SENDER_APP_PASSWORD)
         server.sendmail(SENDER_EMAIL, RECEIVER_EMAIL, msg.as_string())
     print("Email sent successfully!")
